@@ -204,9 +204,84 @@ const fontFamily = {
 	]
 };
 
+const heading = {
+	options: [
+		{
+			model: 'paragraph',
+			title: 'Paragraph',
+			view: {
+				name: 'p',
+				attributes: {
+					'data-react-element': 'paragraph'
+				}
+			}
+		},
+		{
+			model: 'title',
+			title: 'Title',
+			view: {
+				name: 'h1',
+				attributes: {
+					'data-react-element': 'title'
+				}
+			}
+		},
+		{
+			model: 'heading1',
+			title: 'Heading 1',
+			view: {
+				name: 'h2',
+				attributes: {
+					'data-react-element': 'heading1'
+				}
+			}
+		},
+		{
+			model: 'heading2',
+			title: 'Heading 2',
+			view: {
+				name: 'h3',
+				attributes: {
+					'data-react-element': 'heading2'
+				}
+			}
+		},
+		{
+			model: 'heading3',
+			title: 'Heading 3',
+			view: {
+				name: 'h4',
+				attributes: {
+					'data-react-element': 'heading4'
+				}
+			}
+		},
+		{
+			model: 'heading4',
+			title: 'Heading 4',
+			view: {
+				name: 'h5',
+				attributes: {
+					'data-react-element': 'heading5'
+				}
+			}
+		},
+		{
+			model: 'heading5',
+			title: 'Heading 5',
+			view: {
+				name: 'h6',
+				attributes: {
+					'data-react-element': 'heading5'
+				}
+			}
+		}
+	]
+};
 const config = {
 	fontSize,
-	fontFamily
+	fontFamily,
+	heading
 };
 
 export default config;

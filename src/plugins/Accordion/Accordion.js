@@ -1,7 +1,7 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import AccordionEditing from './AccordionEditing';
 import AccordionUI from './AccordionUI';
-import './index.css';
+// import './index.css';
 
 class Accordion extends Plugin {
 	static get requires() {

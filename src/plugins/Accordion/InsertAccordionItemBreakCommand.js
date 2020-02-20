@@ -11,13 +11,18 @@ export default class InsertAccordionItemBreakCommand extends Command {
 		);
 
 		editor.model.change(writer => {
-			const accordionItemBreak = createAccordionItemBreak(writer);
+			try {
+				const accordionItemBreak = createAccordionItemBreak(writer);
 
-			const row = accordion.getChildIndex(selection.getSelectedElement());
-			console.log(row);
-			const insertAt = row + 1;
+				const row = accordion.getChildIndex(
+					selection.getSelectedElement()
+				);
+				const insertAt = row + 1;
 
-			writer.insert(accordionItemBreak, accordion, insertAt);
+				writer.insert(accordionItemBreak, accordion, insertAt);
+			} catch (e) {
+				console.error('Cannot insert here');
+			}
 		});
 	}
 
@@ -29,7 +34,6 @@ export default class InsertAccordionItemBreakCommand extends Command {
 			'accordionItemBreak'
 		);
 
-		// this.isEnabled = allowedIn !== null;
-		this.isEnabled = true;
+		this.isEnabled = allowedIn !== null;
 	}
 }

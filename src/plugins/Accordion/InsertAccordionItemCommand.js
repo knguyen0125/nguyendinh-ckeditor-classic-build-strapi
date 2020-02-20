@@ -11,13 +11,18 @@ export default class InsertAccordionItemCommand extends Command {
 		);
 
 		editor.model.change(writer => {
-			const accordionItem = createAccordionItem(writer);
+			try {
+				const accordionItem = createAccordionItem(writer);
 
-			const row = accordion.getChildIndex(selection.getSelectedElement());
-			console.log(row);
-			const insertAt = row + 1;
+				const row = accordion.getChildIndex(
+					selection.getSelectedElement()
+				);
+				const insertAt = row + 1;
 
-			writer.insert(accordionItem, accordion, insertAt);
+				writer.insert(accordionItem, accordion, insertAt);
+			} catch (e) {
+				console.error('cannot add accordion item here');
+			}
 		});
 	}
 
