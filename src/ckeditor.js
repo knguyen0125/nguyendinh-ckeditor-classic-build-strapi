@@ -28,12 +28,19 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import SimpleUploadAdapter from './plugins/SimpleUploadAdapterStrapi';
+import Accordion from './plugins/Accordion/Accordion';
+import config from './config';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+	// Markdown,
 	Essentials,
+	Alignment,
 	UploadAdapter,
 	Autoformat,
 	Bold,
@@ -54,21 +61,30 @@ ClassicEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	SimpleUploadAdapter,
+	Font,
+	Accordion
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
+	...config,
 	toolbar: {
 		items: [
 			'heading',
+			'fontFamily',
+			'fontSize',
 			'|',
 			'bold',
 			'italic',
+			'underline',
 			'link',
+			'|',
+			'alignment',
+			'|',
 			'bulletedList',
 			'numberedList',
-			'|',
 			'indent',
 			'outdent',
 			'|',
@@ -77,24 +93,35 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'|',
+			'accordion',
+			'accordionItem',
+			'accordionItemBreak'
 		]
 	},
 	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
-		]
+		toolbar: ['imageStyle:full', '|', 'imageTextAlternative']
 	},
 	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
+		contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
 	},
+	link: {
+		decorators: {
+			addTargetToLinks: {
+				mode: 'manual',
+				label: 'Open in a new window (_blank, no-follow)',
+				attributes: {
+					target: '_blank',
+					rel: 'noopener noreferrer nofollow'
+				}
+			}
+		}
+	},
+	alignment: {
+		options: ['left', 'center', 'right']
+	},
+
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'en'
 };

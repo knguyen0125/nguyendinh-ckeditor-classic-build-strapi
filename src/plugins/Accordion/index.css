@@ -1,0 +1,27 @@
+.accordion {
+	background-color: rgba(0,0,0,0.05);
+	padding: 16px;
+}
+
+.accordion-item {
+	padding: 8px;
+	background-color: rgba(0,0,0,0.08);
+}
+
+.accordion-item-title {
+	padding: 8px;
+	background-color: white;
+	margin-bottom: 8px
+}
+
+.accordion-item-description {
+	padding: 8px;
+	background-color: white;
+}
+
+.accordion-item-break {
+	height: 20px;
+	background-color: rgba(256,0,0,1);
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
