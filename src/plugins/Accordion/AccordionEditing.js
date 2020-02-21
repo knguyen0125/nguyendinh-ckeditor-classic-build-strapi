@@ -105,8 +105,7 @@ export default class AccordionEditing extends Plugin {
 				name: 'div',
 				attributes: {
 					'data-react-element': 'accordion'
-				},
-				classes: 'card bg-dark'
+				}
 			}
 		});
 		conversion.for('dataDowncast').elementToElement({
@@ -115,16 +114,14 @@ export default class AccordionEditing extends Plugin {
 				name: 'div',
 				attributes: {
 					'data-react-element': 'accordion'
-				},
-				classes: 'card bg-dark'
+				}
 			}
 		});
 		conversion.for('editingDowncast').elementToElement({
 			model: 'accordion',
 			view: (modelElement, viewWriter) => {
 				const div = viewWriter.createContainerElement('div', {
-					'data-react-element': 'accordion',
-					class: 'card bg-dark'
+					'data-react-element': 'accordion'
 				});
 
 				return toWidget(div, viewWriter, { label: 'Accordion Widget' });
@@ -137,8 +134,7 @@ export default class AccordionEditing extends Plugin {
 				name: 'section',
 				attributes: {
 					'data-react-element': 'accordion-item'
-				},
-				classes: ['card-header']
+				}
 			}
 		});
 
@@ -148,8 +144,7 @@ export default class AccordionEditing extends Plugin {
 				name: 'section',
 				attributes: {
 					'data-react-element': 'accordion-item'
-				},
-				classes: ['card-header']
+				}
 			}
 		});
 
@@ -157,8 +152,7 @@ export default class AccordionEditing extends Plugin {
 			model: 'accordionItem',
 			view: (modelElement, viewWriter) => {
 				const section = viewWriter.createContainerElement('section', {
-					'data-react-element': 'accordion-item',
-					class: 'card-header'
+					'data-react-element': 'accordion-item'
 				});
 
 				return toWidget(section, viewWriter, {
@@ -170,31 +164,28 @@ export default class AccordionEditing extends Plugin {
 		conversion.for('upcast').elementToElement({
 			model: 'accordionItemTitle',
 			view: {
-				name: 'h2',
+				name: 'h3',
 				attributes: {
 					'data-react-element': 'accordion-item-title'
-				},
-				classes: ['card-title bg-gray text-dark']
+				}
 			}
 		});
 
 		conversion.for('dataDowncast').elementToElement({
 			model: 'accordionItemTitle',
 			view: {
-				name: 'h2',
+				name: 'h3',
 				attributes: {
 					'data-react-element': 'accordion-item-title'
-				},
-				classes: ['card-title bg-gray text-dark']
+				}
 			}
 		});
 
 		conversion.for('editingDowncast').elementToElement({
 			model: 'accordionItemTitle',
 			view: (modelElement, viewWriter) => {
-				const h1 = viewWriter.createEditableElement('h2', {
-					'data-react-element': 'accordion-item-title',
-					class: 'card-title bg-gray text-dark'
+				const h1 = viewWriter.createEditableElement('h3', {
+					'data-react-element': 'accordion-item-title'
 				});
 
 				return toWidgetEditable(h1, viewWriter);
@@ -207,8 +198,7 @@ export default class AccordionEditing extends Plugin {
 				name: 'section',
 				attributes: {
 					'data-react-element': 'accordion-item-description'
-				},
-				classes: ['card-body bg-gray text-dark']
+				}
 			}
 		});
 
@@ -218,17 +208,15 @@ export default class AccordionEditing extends Plugin {
 				name: 'section',
 				attributes: {
 					'data-react-element': 'accordion-item-description'
-				},
-				classes: ['card-body bg-gray text-dark']
+				}
 			}
 		});
 
 		conversion.for('editingDowncast').elementToElement({
 			model: 'accordionItemDescription',
 			view: (modelElement, viewWriter) => {
-				const div = viewWriter.createEditableElement('div', {
-					'data-react-element': 'accordion-item-description',
-					class: 'card-body bg-gray text-dark'
+				const div = viewWriter.createEditableElement('section', {
+					'data-react-element': 'accordion-item-description'
 				});
 
 				return toWidgetEditable(div, viewWriter);
@@ -240,10 +228,8 @@ export default class AccordionEditing extends Plugin {
 			view: {
 				name: 'div',
 				attributes: {
-					'data-react-element': 'accordion-item-break',
-					'data-content': 'divider'
-				},
-				classes: ['divider text-center']
+					'data-react-element': 'accordion-item-break'
+				}
 			}
 		});
 
@@ -252,10 +238,8 @@ export default class AccordionEditing extends Plugin {
 			view: {
 				name: 'div',
 				attributes: {
-					'data-react-element': 'accordion-item-break',
-					'data-content': 'divider'
-				},
-				classes: ['divider text-center']
+					'data-react-element': 'accordion-item-break'
+				}
 			}
 		});
 
@@ -263,9 +247,7 @@ export default class AccordionEditing extends Plugin {
 			model: 'accordionItemBreak',
 			view: (modelElement, viewWriter) => {
 				const div = viewWriter.createContainerElement('div', {
-					'data-react-element': 'accordion-item-break',
-					class: 'divider text-center',
-					'data-content': 'divider'
+					'data-react-element': 'accordion-item-break'
 				});
 
 				return toWidget(div, viewWriter, {

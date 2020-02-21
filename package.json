@@ -1,6 +1,6 @@
 {
   "name": "nguyendinh-ckeditor-classic-build-strapi",
-  "version": "16.0.0",
+  "version": "16.0.2",
   "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
     "ckeditor5-build",
@@ -103,6 +103,8 @@
     "@ckeditor/ckeditor5-upload": "^16.0.0",
     "@ckeditor/ckeditor5-utils": "latest",
     "@ckeditor/ckeditor5-widget": "^16.0.0",
+    "bootstrap": "^4.4.1",
+    "materialize-css": "^1.0.0-rc.2",
     "spectre.css": "^0.5.8"
   }
 }

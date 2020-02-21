@@ -1,6 +1,5 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
-import KeystrokeHandler from '@ckeditor/ckeditor5-utils/src/keystrokehandler';
 
 class AccordionUI extends Plugin {
 	init() {

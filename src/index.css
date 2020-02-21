@@ -1,2 +1,76 @@
-@import '../node_modules/spectre.css/dist/spectre.min.css';
-@import '../node_modules/spectre.css/dist/spectre-icons.min.css';
+[data-react-element='accordion'] {
+	background-color: #343a40 !important;
+	text-align: center !important;
+}
+
+[data-react-element='accordion']:before {
+	content: 'Accordion';
+	color: #fff;
+	display: inline-block;
+	text-align: center !important;
+}
+
+[data-react-element='accordion-item'] {
+	padding: 16px;
+	text-align: left !important;
+}
+
+[data-react-element='accordion-item-title'] {
+	background-color: #fff;
+	padding: 8px;
+}
+[data-react-element='accordion-item-title']:before {
+	background: #fff;
+	color: #bcc3ce;
+	content: 'Title';
+	padding: 0 0.4rem;
+}
+
+[data-react-element='accordion-item-description'] {
+	background-color: #fff;
+	padding: 8px;
+}
+
+[data-react-element='accordion-item-description']:before {
+	background: #fff;
+	color: #bcc3ce;
+	content: 'Body';
+	padding: 0 0.4rem;
+}
+
+[data-react-element='accordion-item-break'] {
+	display: block;
+	position: relative;
+	border-top: 0.05rem solid #f1f3f5;
+	height: 0.05rem;
+	margin: 0.8rem 0;
+	text-align: center;
+}
+
+[data-react-element='accordion-item-break']:after {
+	background: #fff;
+	color: #000;
+	content: 'divider';
+	display: inline-block;
+	padding: 0 0.4rem;
+	font-size: 0.7rem;
+	transform: translateY(-1rem);
+	text-align: center !important;
+}
+
+[data-react-element='button'] {
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: center;
+	cursor: pointer;
+	user-select: none;
+	background-color: #dc3545 !important;
+	border-color: #dc3545 !important;
+	padding: .5rem 1rem;
+	font-size: 1.25rem;
+	line-height: 1.5;
+	border-radius: .3rem;
+	color: #fff !important;
+	text-decoration: none !important;
+}

@@ -15,7 +15,13 @@ export default class InsertAccordionCommand extends Command {
 			selection.getFirstPosition(),
 			'accordion'
 		);
+		const selectedElement = selection.getSelectedElement();
+		console.log(selectedElement);
 
-		this.isEnabled = allowedIn !== null;
+		const selectedElementIsAccordion = selectedElement
+			? selectedElement.name === 'accordion'
+			: false;
+
+		this.isEnabled = allowedIn !== null && !selectedElementIsAccordion;
 	}
 }

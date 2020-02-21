@@ -117,27 +117,11 @@ ClassicEditor.defaultConfig = {
 					rel: 'noopener noreferrer nofollow'
 				}
 			},
-			isButton: {
+			isPrimaryButton: {
 				mode: 'manual',
 				label: 'Is Button',
 				attributes: {
-					class: 'btn btn-lg'
-				}
-			},
-			isPrimaryButton: {
-				mode: 'manual',
-				label: 'Is Primary Button',
-				attributes: {
-					class: 'btn-error',
-					'data-react-element': 'primaryButton'
-				}
-			},
-			isLinkButton: {
-				mode: 'manual',
-				label: 'Is Link Button',
-				attributes: {
-					class: 'btn-link',
-					'data-react-element': 'linkButton'
+					'data-react-element': 'button'
 				}
 			}
 		}
